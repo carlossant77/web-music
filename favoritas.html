@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favoritas - Musicy</title>
+    <link rel="stylesheet" href="static/styles/initial.css" />
+    <link rel="stylesheet" href="static/styles/favoritas.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="top-content">
+        <a href="#">
+          <div class="item">
+            <img class="icon" src="static/assets/logoAzul.png" alt="" />
+            <p>Musicy</p>
+          </div>
+        </a>
+        <a href="/index.html">
+          <div class="item">
+            <img src="static/assets/inicio.png" alt="" />
+            <p>Inicio</p>
+          </div>
+        </a>
+        <a href="favoritas.html">
+          <div class="item">
+            <img src="static/assets/favorit.png" alt="" />
+            <p>Favoritas</p>
+          </div>
+        </a>
+        <a href="historico.html">
+          <div class="item">
+            <img src="static/assets/historico.png" alt="" />
+            <p>Histórico</p>
+          </div>
+        </a>
+      </div>
+      <a>
+        <img class="config" src="static/assets/settings.png" alt="" id="btnConfig" />
+      </a>
+    </nav>
+
+    <div class="main-content">
+      <div class="search-bar">
+        <input type="checkbox" id="toggle" hidden />
+        <label for="toggle">
+          <img src="static/assets/lupa.png" alt="" />
+        </label>
+      </div>
+      
+      <div class="favoritas-container">
+        <div class="header-favoritas">
+          <h1>Suas Músicas Favoritas</h1>
+          <div class="controles-favoritas">
+            <button id="btnExportarFavoritas" class="btn-exportar">Exportar Lista</button>
+            <button id="btnCriarPlaylist" class="btn-playlist">Criar Playlist</button>
+          </div>
+        </div>
+
+        <!-- Estatísticas das Favoritas -->
+        <div class="estatisticas-favoritas">
+          <div class="cards-estatisticas">
+            <div class="card-estatistica">
+              <div class="icone-estatistica">❤️</div>
+              <div class="info-estatistica">
+                <h4>Total de Favoritas</h4>
+                <p id="totalFavoritas">0</p>
+              </div>
+            </div>
+            <div class="card-estatistica">
+              <div class="icone-estatistica">🎵</div>
+              <div class="info-estatistica">
+                <h4>Artistas Favoritos</h4>
+                <p id="totalArtistas">0</p>
+              </div>
+            </div>
+            <div class="card-estatistica">
+              <div class="icone-estatistica">⏱️</div>
+              <div class="info-estatistica">
+                <h4>Tempo Total</h4>
+                <p id="tempoTotalFavoritas">0 min</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros e Busca -->
+        <div class="filtros-favoritas">
+          <div class="busca-favoritas">
+            <input type="text" id="buscarFavoritas" placeholder="Buscar nas favoritas..." />
+            <img src="static/assets/lupa.png" alt="Buscar" class="icone-busca">
+          </div>
+          
+          <div class="filtro-group">
+            <label for="filtroOrdenar">Ordenar por:</label>
+            <select id="filtroOrdenar">
+              <option value="data">Data de Adição</option>
+              <option value="titulo">Título (A-Z)</option>
+              <option value="artista">Artista (A-Z)</option>
+              <option value="reproducoes">Mais Reproduzidas</option>
+            </select>
+          </div>
+          
+          <div class="filtro-group">
+            <label for="filtroArtista">Filtrar por artista:</label>
+            <select id="filtroArtista">
+              <option value="todos">Todos os Artistas</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Playlists Salvas -->
+        <div id="playlistsContainer" class="playlists-container" style="display: none;">
+          <h3>Suas Playlists</h3>
+          <div id="listaPlaylists" class="lista-playlists">
+            <!-- Playlists serão carregadas aqui -->
+          </div>
+        </div>
+
+        <!-- Lista de Músicas Favoritas -->
+        <div class="favoritas-musicas">
+          <div class="header-lista">
+            <h3>Músicas Favoritas</h3>
+            <span id="contadorFavoritas" class="contador">0 músicas</span>
+          </div>
+          
+          <div id="listaFavoritas" class="lista-favoritas">
+            <!-- As músicas favoritas serão carregadas aqui -->
+          </div>
+          
+          <div id="favoritasVazias" class="favoritas-vazias" style="display: none;">
+            <div class="vazia-content">
+              <img src="static/assets/favorit.png" alt="Favoritas vazias" class="icone-vazio">
+              <h3>Nenhuma música favorita ainda</h3>
+              <p>Comece a adicionar músicas aos favoritos para vê-las aqui!</p>
+              <button id="btnExplorarMusicas" class="btn-explorar">Explorar Músicas</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recomendações Baseadas nas Favoritas -->
+        <div class="recomendacoes-favoritas">
+          <h3>Talvez você também goste:</h3>
+          <div id="recomendacoesFavoritas" class="musicas-grid">
+            <!-- Recomendações baseadas nas favoritas -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Criar Playlist -->
+    <div id="modalPlaylist" class="modal">
+      <div class="modal-content">
+        <h3>Criar Nova Playlist</h3>
+        <div class="form-group">
+          <label for="nomePlaylist">Nome da Playlist:</label>
+          <input type="text" id="nomePlaylist" placeholder="Minha Playlist Incrível" maxlength="50" />
+          <span class="contador-caracteres">0/50</span>
+        </div>
+        <div class="form-group">
+          <label for="descricaoPlaylist">Descrição (opcional):</label>
+          <textarea id="descricaoPlaylist" placeholder="Descreva sua playlist..." maxlength="200"></textarea>
+          <span class="contador-caracteres">0/200</span>
+        </div>
+        <div class="modal-buttons">
+          <button id="btnCriarPlaylistModal" class="btn-confirmar">Criar Playlist</button>
+          <button id="btnCancelarPlaylist" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Exportar -->
+    <div id="modalExportar" class="modal">
+      <div class="modal-content">
+        <h3>Exportar Lista de Favoritas</h3>
+        <p>Escolha o formato para exportar sua lista de músicas favoritas:</p>
+        <div class="opcoes-exportar">
+          <button class="btn-exportar-formato" data-formato="texto">
+            <span class="icone-exportar">📄</span>
+            <span>Texto Simples</span>
+          </button>
+          <button class="btn-exportar-formato" data-formato="json">
+            <span class="icone-exportar">🔧</span>
+            <span>JSON</span>
+          </button>
+          <button class="btn-exportar-formato" data-formato="csv">
+            <span class="icone-exportar">📊</span>
+            <span>CSV</span>
+          </button>
+        </div>
+        <div class="modal-buttons">
+          <button id="btnFecharExportar" class="btn-cancelar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="favoritas.js"></script>
+  </body>
+</html>

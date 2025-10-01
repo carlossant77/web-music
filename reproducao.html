@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproduzindo - Musicy</title>
+    <link rel="stylesheet" href="static/styles/reproducao.css">
+</head>
+<body>
+    <nav>
+        <div class="top-content">
+            <a href="#">
+                <div class="item">
+                    <img class="icon" src="static/assets/logoAzul.png" alt="" />
+                    <p>Musicy</p>
+                </div>
+            </a>
+            <a href="index.html">
+                <div class="item">
+                    <img src="static/assets/inicio.png" alt="" />
+                    <p>Inicio</p>
+                </div>
+            </a>
+            <a href="favoritas.html">
+                <div class="item">
+                    <img src="static/assets/favorit.png" alt="" />
+                    <p>Favoritas</p>
+                </div>
+            </a>
+            <a href="historico.html">
+                <div class="item">
+                    <img src="static/assets/historico.png" alt="" />
+                    <p>Histórico</p>
+                </div>
+            </a>
+        </div>
+        <a>
+            <img class="config" src="static/assets/settings.png" alt="" id="btnConfig" />
+        </a>
+    </nav>
+
+    <div class="main-content">
+        <div class="player-layout">
+            <!-- MÚSICA PRINCIPAL (ESQUERDA) -->
+            <div class="musica-principal">
+                <div class="album-art-principal">
+                    <img id="capaAlbumPrincipal" src="" alt="Capa do Álbum">
+                    <!-- Botão de Favoritar na capa -->
+                    <button id="btnFavoritar" class="btn-favoritar-capa">
+                        <img id="iconeFavorito" src="static/assets/favorit.png" alt="Favoritar">
+                    </button>
+                </div>
+                
+                <div class="song-info-principal">
+                    <h1 id="tituloMusicaPrincipal">Título da Música</h1>
+                    <h2 id="artistaMusicaPrincipal">Nome do Artista</h2>
+                </div>
+
+                <div class="progress-container">
+                    <div class="time-display">
+                        <span id="tempoAtual">0:00</span>
+                        <span id="tempoTotal">0:00</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="btnPrev" class="control-btn">
+                        <img src="static/assets/previous.png" alt="Anterior">
+                    </button>
+                    <button id="btnPlayPause" class="play-pause">
+                        <img id="playPauseIcon" src="static/assets/play.png" alt="Play/Pause">
+                    </button>
+                    <button id="btnNext" class="control-btn">
+                        <img src="static/assets/next.png" alt="Próxima">
+                    </button>
+                </div>
+            </div>
+
+            <!-- RECOMENDAÇÕES (DIREITA) -->
+            <div class="recomendacoes">
+                <h3 class="titulo-recomendacoes">Achamos que você também pode gostar:</h3>
+                
+                <div class="lista-recomendacoes" id="listaRecomendacoes">
+                    <!-- As músicas recomendadas serão inseridas aqui pelo JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+    <script src="reproducao.js"></script>
+</body>
+</html>

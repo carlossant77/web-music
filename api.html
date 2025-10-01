@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SpotiFácil (Edu)</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>SpotiFácil (Edu)</h1>
+      <div class="server-input">
+        <input
+          id="serverUrl"
+          type="url"
+          inputmode="url"
+          placeholder="URL do servidor Flask (ex.: http://SEU-IP)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="connectBtn" type="button">Conectar</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="player">
+        <div id="nowPlaying">Nada tocando</div>
+        <audio id="audio" controls preload="none"></audio>
+      </div>
+    </main>
+
+    <footer>
+      <div id="status" aria-live="polite"></div>
+      <ul id="songList"></ul>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

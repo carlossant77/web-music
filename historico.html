@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histórico - Musicy</title>
+    <link rel="stylesheet" href="static/styles/initial.css" />
+    <link rel="stylesheet" href="static/styles/historico.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="top-content">
+        <a href="#">
+          <div class="item">
+            <img class="icon" src="static/assets/logoAzul.png" alt="" />
+            <p>Musicy</p>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="item">
+            <img src="static/assets/inicio.png" alt="" />
+            <p>Inicio</p>
+          </div>
+        </a>
+        <a href="/favoritas.html">
+          <div class="item">
+            <img src="static/assets/favorit.png" alt="" />
+            <p>Favoritas</p>
+          </div>
+        </a>
+        <a href="historico.html">
+          <div class="item">
+            <img src="static/assets/historico.png" alt="" />
+            <p>Histórico</p>
+          </div>
+        </a>
+      </div>
+      <a>
+        <img class="config" src="static/assets/settings.png" alt="" id="btnConfig" />
+      </a>
+    </nav>
+
+    <div class="main-content">
+      <div class="search-bar">
+        <input type="checkbox" id="toggle" hidden />
+        <label for="toggle">
+          <img src="static/assets/lupa.png" alt="" />
+        </label>
+      </div>
+      
+      <div class="historico-container">
+        <div class="header-historico">
+          <h1>Seu Histórico Musical</h1>
+          <div class="controles-historico">
+            <button id="btnLimparHistorico" class="btn-limpar">Limpar Histórico</button>
+            <button id="btnEstatisticas" class="btn-estatisticas">Ver Estatísticas</button>
+          </div>
+        </div>
+
+        <!-- Estatísticas (inicialmente ocultas) -->
+        <div id="estatisticas" class="estatisticas-container" style="display: none;">
+          <h3>Suas Estatísticas</h3>
+          <div class="cards-estatisticas">
+            <div class="card-estatistica">
+              <h4>Total de Reproduções</h4>
+              <p id="totalReproducoes">0</p>
+            </div>
+            <div class="card-estatistica">
+              <h4>Artista Mais Ouvido</h4>
+              <p id="artistaTop">-</p>
+            </div>
+            <div class="card-estatistica">
+              <h4>Música Mais Tocada</h4>
+              <p id="musicaTop">-</p>
+            </div>
+            <div class="card-estatistica">
+              <h4>Tempo Total</h4>
+              <p id="tempoTotal">0 min</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros-historico">
+          <div class="filtro-group">
+            <label for="filtroData">Ordenar por:</label>
+            <select id="filtroData">
+              <option value="recentes">Mais Recentes</option>
+              <option value="antigas">Mais Antigas</option>
+              <option value="reproducoes">Mais Reproduzidas</option>
+            </select>
+          </div>
+          <div class="filtro-group">
+            <label for="filtroArtista">Filtrar por artista:</label>
+            <select id="filtroArtista">
+              <option value="todos">Todos os Artistas</option>
+            </select>
+          </div>
+          <button id="btnAplicarFiltros" class="btn-filtrar">Aplicar Filtros</button>
+        </div>
+
+        <!-- Lista de Músicas do Histórico -->
+        <div class="historico-musicas">
+          <h3>Músicas Reproduzidas</h3>
+          <div id="listaHistorico" class="lista-historico">
+            <!-- As músicas do histórico serão carregadas aqui -->
+          </div>
+        </div>
+
+        <!-- Músicas Recomendadas Baseadas no Histórico -->
+        <div class="recomendacoes-historico">
+          <h3>Baseado no seu histórico, você pode gostar:</h3>
+          <div id="recomendacoesHistorico" class="musicas-grid">
+            <!-- Recomendações baseadas no histórico -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="modalConfirmacao" class="modal">
+      <div class="modal-content">
+        <h3>Limpar Histórico</h3>
+        <p>Tem certeza que deseja limpar todo o seu histórico de reproduções? Esta ação não pode ser desfeita.</p>
+        <div class="modal-buttons">
+          <button id="btnConfirmarLimpar" class="btn-confirmar">Sim, Limpar</button>
+          <button id="btnCancelarLimpar" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="historico.js"></script>
+  </body>
+</html>

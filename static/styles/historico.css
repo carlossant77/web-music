@@ -1,0 +1,478 @@
+/* ESTILOS ESPECÍFICOS PARA A PÁGINA DE HISTÓRICO */
+
+.historico-container {
+    margin-left: 7%;
+    margin-right: 7%;
+    padding-bottom: 3rem;
+}
+
+.header-historico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #007bff;
+}
+
+.header-historico h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.controles-historico {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-limpar, .btn-estatisticas, .btn-filtrar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #007bff;
+    color: #e6e6e6;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-limpar:hover, .btn-estatisticas:hover, .btn-filtrar:hover {
+    background: #007bff;
+    transform: translateY(-2px);
+}
+
+.btn-limpar {
+    background: rgba(255, 77, 77, 0.1);
+    border-color: #ff4d4d;
+}
+
+.btn-limpar:hover {
+    background: #ff4d4d;
+}
+
+/* Estatísticas */
+.estatisticas-container {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estatisticas-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.cards-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card-estatistica {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid #007bff;
+}
+
+.card-estatistica h4 {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.card-estatistica p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Filtros */
+.filtros-historico {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: end;
+}
+
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filtro-group label {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.filtro-group select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e6e6e6;
+    padding: 0.5rem;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+/* Lista de Histórico */
+.historico-musicas {
+    margin-bottom: 3rem;
+}
+
+.historico-musicas h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.lista-historico {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.musica-historico {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.musica-historico:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: #007bff;
+    transform: translateX(5px);
+}
+
+.musica-historico.reproduzindo-agora {
+    border-left-color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.musica-historico img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.info-musica-historico {
+    flex: 1;
+}
+
+.info-musica-historico h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
+    color: #ffffff;
+}
+
+.info-musica-historico p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin: 0 0 0.5rem 0;
+}
+
+.meta-musica {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.controles-musica-historico {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-reproduzir, .btn-favoritar {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #e6e6e6;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-reproduzir:hover {
+    background: #007bff;
+}
+
+.btn-favoritar:hover {
+    background: #ff4d4d;
+}
+
+.btn-favoritar.favoritada {
+    background: #ff4d4d;
+}
+
+/* Recomendações baseadas no histórico */
+.recomendacoes-historico {
+    margin-top: 2rem;
+}
+
+.recomendacoes-historico h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 13, 16, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.modal-content h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    color: #b0b0b0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-confirmar, .btn-cancelar {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-confirmar {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn-confirmar:hover {
+    background: #ff3333;
+    transform: translateY(-2px);
+}
+
+.btn-cancelar {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e6e6e6;
+}
+
+.btn-cancelar:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estados vazios */
+.historico-vazio {
+    text-align: center;
+    padding: 3rem;
+    color: #b0b0b0;
+}
+
+.historico-vazio img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-historico {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .filtros-historico {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .musica-historico {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .musica-historico img {
+        margin-right: 0;
+    }
+    
+    .controles-musica-historico {
+        justify-content: center;
+    }
+    
+    .cards-estatisticas {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ========================== */
+/* HISTÓRICO - RESPONSIVO */
+/* ========================== */
+@media (max-width: 768px) {
+    .historico-container {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 1rem;
+    }
+
+    .header-historico {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .header-historico h1 {
+        font-size: 1.8rem;
+    }
+
+    .controles-historico {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .btn-limpar, .btn-estatisticas {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* ESTATÍSTICAS MOBILE */
+    .cards-estatisticas {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .card-estatistica {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* FILTROS MOBILE */
+    .filtros-historico {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .filtro-group {
+        width: 100%;
+    }
+
+    .filtro-group select {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .btn-filtrar {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* LISTA DE HISTÓRICO MOBILE */
+    .musica-historico {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .musica-historico img {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+    }
+
+    .controles-musica-historico {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn-reproduzir, .btn-favoritar {
+        flex: 1;
+        padding: 0.8rem;
+    }
+
+    .meta-musica {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* RECOMENDAÇÕES MOBILE */
+    .recomendacoes-historico h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    /* MODAL MOBILE */
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .btn-confirmar, .btn-cancelar {
+        width: 100%;
+    }
+}
