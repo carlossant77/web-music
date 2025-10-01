@@ -21,3 +21,10 @@ Este repositório contem uma interface front-end para consumo de uma API de mús
 - Passo 4: Inicialize o seu servidor da API e insira o link no input da página "index.html"
 
 # Link de Download 💾
+A aplicação web pode ser baixada e testada, para implementação de melhorias ou fins educacionais através: [Deste Link](https://downgit.github.io/#/home?url=https://github.com/carlossant77/web-music/tree/main)
+
+# Demonstração da Interface 🚀
+A aplicação pode ser testada através: [Deste Link](https://web-music-santiago.onrender.com/)
+
+# OBSERVAÇÕES DO AUTOR 📚
+A interface front-end não possui requisitos para ser testada, entretanto, para inicialização da API run.py, é necessário a instalação da linguagem Python e do microframework Flask através do terminal.
