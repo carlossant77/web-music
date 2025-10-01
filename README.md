@@ -5,5 +5,5 @@ Este repositório contem uma interface front-end para consumo de uma API de mús
 # Demonstração Visual 🔎
 ![inicio](static/assets/index.png)
 ![login1](static/assets/reproducao.png)
-![foto1](static/assets/historico.png)
+![foto1](static/assets/paghistorico.png)
 ![foto1](static/assets/favoritas.png)
